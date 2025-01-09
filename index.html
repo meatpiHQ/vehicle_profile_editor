@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Profile Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vehicle Profile Editor</h1>
+        </header>
+        
+        <div class="vehicle-info card">
+            <h2>Vehicle Information</h2>
+            <div class="input-group">
+                <label>Car Model:</label>
+                <input type="text" id="carModel" placeholder="Enter car model...">
+            </div>
+            <div class="input-group">
+                <label>Init:</label>
+                <input type="text" id="init" placeholder="Enter init string...">
+            </div>
+        </div>
+
+        <div class="pids-section card">
+            <div class="section-header">
+                <h2>PIDs</h2>
+                <button class="btn primary" onclick="addNewPid()">
+                    <span class="material-icons">add</span> Add New PID
+                </button>
+            </div>
+            <div id="pidsList" class="accordion"></div>
+        </div>
+
+        <div class="actions card">
+            <button class="btn success" onclick="saveProfile()">
+                <span class="material-icons">save</span> Save Profile
+            </button>
+            <button class="btn info" onclick="loadProfile()">
+                <span class="material-icons">upload_file</span> Load Profile
+            </button>
+            <input type="file" id="fileInput" accept=".json" style="display: none">
+        </div>
+          <div class="json-preview card">
+              <div class="section-header">
+                  <h3>JSON Preview</h3>
+                  <button class="btn info" onclick="copyJsonToClipboard()">
+                      <span class="material-icons">content_copy</span> Copy JSON
+                  </button>
+              </div>
+              <pre id="jsonOutput"></pre>
+          </div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+  </html>
